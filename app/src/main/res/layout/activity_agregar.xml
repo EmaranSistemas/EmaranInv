@@ -27,7 +27,7 @@
             android:text="INGRESE DATOS" />
 
         <EditText
-            android:id="@+id/ednombre"
+            android:id="@+id/tienda"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginTop="35dp"
@@ -36,20 +36,20 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/eddad"
+            android:id="@+id/producto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
-            android:hint="Ingrese edad"
+            android:hint="Producto"
             android:inputType="textEmailAddress" />
 
         <EditText
-            android:id="@+id/edinventario"
+            android:id="@+id/inventario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="170dp"
             android:hint="Inventario"
-            android:inputType="textEmailAddress" />
+            android:inputType="number" />
 
 
 
