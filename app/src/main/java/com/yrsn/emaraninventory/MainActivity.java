@@ -19,3 +19,21 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 }
+
+
+/*
+$nombre = $_POST['nombre'];
+$edad = $_POST['edad'];
+$query = "INSERT INTO usuarios(nombre,edad) VALUES('$nombre','$edad')";
+//$query ="INSERT INTO `usuarios`(`nombre`, `edad`) VALUES ('sanchez','io')";
+
+$resultado = mysqli_query($conexion,$query);
+
+if($resultado){
+    echo "datos insertados";
+}else{
+    echo "error en la insercion";
+}
+mysqli_close($conexion);
+?>
+ */
