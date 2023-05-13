@@ -1,6 +1,5 @@
 package com.yrsn.emaraninventory;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -24,79 +23,80 @@ import java.util.Map;
 
 public class agregar extends AppCompatActivity {
 
-    private EditText t_tienda,t_producto,t_inventario;
-    private Button b_insertar;
-
+    EditText txtNombre, txtCorreo, txtDireccion;
+    Button btn_insert;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar);
 
-        t_tienda = findViewById(R.id.tienda);
-        t_producto = findViewById(R.id.producto);
-        t_inventario = findViewById(R.id.inventario);
+        txtNombre = findViewById(R.id.nombre);
+        txtCorreo = findViewById(R.id.correo);
+        txtDireccion = findViewById(R.id.direccion);
 
-        b_insertar = findViewById(R.id.b_button);
-        b_insertar.setOnClickListener(new View.OnClickListener() {
+        btn_insert = findViewById(R.id.btnInsert);
+
+        btn_insert.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                insertar_datos();
+            public void onClick(View v) {
+
+                insertData();
             }
         });
-
     }
 
-    private void insertar_datos(){
-        final String tienda = t_tienda.getText().toString().trim();
-        final String producto = t_producto.getText().toString().trim();
-        final String inventario = t_inventario.getText().toString().trim();
+    private void insertData() {
+
+        final String nombre = txtNombre.getText().toString().trim();
+        final String correo = txtCorreo.getText().toString().trim();
+        final String direccion = txtDireccion.getText().toString().trim();
 
         final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("cargando");
+        progressDialog.setMessage("cargando...");
 
-        if(tienda.isEmpty()){
-            Toast.makeText(this,"Ingrese tienda",Toast.LENGTH_SHORT).show();
+        if(nombre.isEmpty()){
+            Toast.makeText(this, "ingrese nombre", Toast.LENGTH_SHORT).show();
             return;
         }
-        else if(producto.isEmpty()){
-            Toast.makeText(this,"Ingrese producto",Toast.LENGTH_SHORT).show();
+        else if(correo.isEmpty()){
+            Toast.makeText(this, "Ingrese correo", Toast.LENGTH_SHORT).show();
             return;
         }
-        else if(inventario.isEmpty()){
-            Toast.makeText(this,"Ingrese inventario",Toast.LENGTH_SHORT).show();
+        else if(direccion.isEmpty()){
+            Toast.makeText(this, "Ingrese direccion", Toast.LENGTH_SHORT).show();
             return;
         }
         else{
             progressDialog.show();
-            StringRequest request = new StringRequest(Request.Method.POST, "https://emaransac.com/android/init.php", new Response.Listener<String>() {
-                @Override
-                public void onResponse(String response) {
-                    if (response.equalsIgnoreCase("Se guardo correctamente.")) {
-                        Toast.makeText(agregar.this, "Se guardo correctamente.", Toast.LENGTH_SHORT).show();
-                        progressDialog.dismiss();
-
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                    } else {
-                        Toast.makeText(agregar.this, response, Toast.LENGTH_SHORT).show();
-                        progressDialog.dismiss();
-                    }
-                }
-            }, new Response.ErrorListener() {
+            StringRequest request = new StringRequest(Request.Method.POST, "https://emaransac.com/android/insertar.php",
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            if(response.equalsIgnoreCase("Se guardo correctamente.")){
+                                Toast.makeText(agregar.this, "Se guardo correctamente.", Toast.LENGTH_SHORT).show();
+                                progressDialog.dismiss();
+                                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                finish();
+                            }
+                            else{
+                                Toast.makeText(agregar.this, response, Toast.LENGTH_SHORT).show();
+                                progressDialog.dismiss();
+                            }
+                        }
+                    }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(agregar.this,error.getMessage(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(agregar.this, error.getMessage(), Toast.LENGTH_SHORT).show();
                     progressDialog.dismiss();
                 }
-            }){
-                @Nullable
+            }
+            ){
                 @Override
-                protected Map<String,String> getParams() throws AuthFailureError{
-
-                    Map<String,String> params = new HashMap<>();
-
-                    params.put("tienda",tienda);
-                    params.put("producto",producto);
-                    params.put("inventario",inventario);
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String,String> params = new HashMap<String,String>();
+                    params.put("nombre",nombre);
+                    params.put("correo",correo);
+                    params.put("direccion",direccion);
                     return params;
                 }
             };
@@ -110,4 +110,5 @@ public class agregar extends AppCompatActivity {
         super.onBackPressed();
         finish();
     }
+
 }
