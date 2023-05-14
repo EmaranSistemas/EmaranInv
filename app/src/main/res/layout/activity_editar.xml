@@ -29,8 +29,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:hint="nombre:"
-        android:id="@+id/nombre"
+        android:hint="tienda:"
+        android:id="@+id/tienda"
         android:layout_marginTop="20dp"
         android:inputType="textPersonName"
         />
@@ -39,8 +39,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:hint="correo:"
-        android:id="@+id/correo"
+        android:hint="producto:"
+        android:id="@+id/producto"
         android:layout_marginTop="10dp"
         android:inputType="textEmailAddress"
         />
@@ -48,8 +48,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:hint="direccion:"
-        android:id="@+id/direccion"
+        android:hint="inventario:"
+        android:id="@+id/inventario"
         android:layout_marginTop="10dp"
         android:inputType="textPersonName"
         />

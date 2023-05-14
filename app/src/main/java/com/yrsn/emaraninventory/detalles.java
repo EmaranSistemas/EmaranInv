@@ -19,17 +19,17 @@ public class detalles extends AppCompatActivity {
 
         //Initializing Views
         tvid = findViewById(R.id.txtid);
-        tvname = findViewById(R.id.txtname);
-        tvemail = findViewById(R.id.txtemail);
-        tvcontact = findViewById(R.id.txcontact);
+        tvname = findViewById(R.id.txttienda);
+        tvemail = findViewById(R.id.txtproducto);
+        tvcontact = findViewById(R.id.txtinventario);
 
         Intent intent = getIntent();
         position = intent.getExtras().getInt("position");
 
         tvid.setText("ID: " + MainActivity.employeeArrayList.get(position).getId());
-        tvname.setText("Name: " + MainActivity.employeeArrayList.get(position).getNombre());
-        tvemail.setText("Email: " + MainActivity.employeeArrayList.get(position).getCorreo());
-        tvcontact.setText("Contact: " + MainActivity.employeeArrayList.get(position).getDireccion());
+        tvname.setText("tienda: " + MainActivity.employeeArrayList.get(position).gettienda());
+        tvemail.setText("producto: " + MainActivity.employeeArrayList.get(position).getproducto());
+        tvcontact.setText("inventario: " + MainActivity.employeeArrayList.get(position).getinventario());
 
     }
 }

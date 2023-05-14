@@ -23,7 +23,7 @@ import java.util.Map;
 
 public class editar extends AppCompatActivity {
 
-    EditText edId, edNombre, edCorreo, edDireccion;
+    EditText edId, edtienda, edproducto, edinventario;
     private int position;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,25 +31,25 @@ public class editar extends AppCompatActivity {
         setContentView(R.layout.activity_editar);
 
         edId = findViewById(R.id.id);
-        edNombre = findViewById(R.id.nombre);
-        edCorreo = findViewById(R.id.correo);
-        edDireccion = findViewById(R.id.direccion);
+        edtienda = findViewById(R.id.tienda);
+        edproducto = findViewById(R.id.producto);
+        edinventario = findViewById(R.id.inventario);
 
         Intent intent = getIntent();
         position = intent.getExtras().getInt("position");
 
         edId.setText(MainActivity.employeeArrayList.get(position).getId());
-        edNombre.setText(MainActivity.employeeArrayList.get(position).getNombre());
-        edCorreo.setText(MainActivity.employeeArrayList.get(position).getCorreo());
-        edDireccion.setText(MainActivity.employeeArrayList.get(position).getDireccion());
+        edtienda.setText(MainActivity.employeeArrayList.get(position).gettienda());
+        edproducto.setText(MainActivity.employeeArrayList.get(position).getproducto());
+        edinventario.setText(MainActivity.employeeArrayList.get(position).getinventario());
 
     }
 
     public void actualizar(View view) {
         final String id = edId.getText().toString();
-        final String nombre = edNombre.getText().toString();
-        final String correo = edDireccion.getText().toString();
-        final String direccion = edCorreo.getText().toString();
+        final String tienda = edtienda.getText().toString();
+        final String producto = edinventario.getText().toString();
+        final String inventario = edproducto.getText().toString();
 
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Actualizando....");
@@ -78,9 +78,9 @@ public class editar extends AppCompatActivity {
                 Map<String,String> params = new HashMap<String,String>();
 
                 params.put("id",id);
-                params.put("nombre",nombre);
-                params.put("correo",correo);
-                params.put("direccion",direccion);
+                params.put("tienda",tienda);
+                params.put("producto",producto);
+                params.put("inventario",inventario);
                 return params;
             }
         };

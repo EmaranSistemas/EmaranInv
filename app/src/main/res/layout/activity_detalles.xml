@@ -31,25 +31,25 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nombre : "
+                android:text="tienda : "
                 android:textSize="20sp"
-                android:id="@+id/txtname"
+                android:id="@+id/txttienda"
                 android:layout_marginBottom="10dp"
                 />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Correo :"
+                android:text="producto :"
                 android:textSize="20sp"
-                android:id="@+id/txtemail"
+                android:id="@+id/txtproducto"
                 android:layout_marginBottom="10dp"
                 />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Direccion :"
+                android:text="inventario :"
                 android:textSize="20sp"
-                android:id="@+id/txcontact"
+                android:id="@+id/txtinventario"
                 android:layout_marginBottom="10dp"
                 />
 

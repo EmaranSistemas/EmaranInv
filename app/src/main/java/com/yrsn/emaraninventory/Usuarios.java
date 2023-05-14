@@ -2,16 +2,16 @@ package com.yrsn.emaraninventory;
 
 
 public class Usuarios {
-    String id,nombre,correo,direccion;
+    String id,tienda,producto,inventario;
 
     public Usuarios() {
     }
 
-    public Usuarios(String id, String nombre, String correo, String direccion) {
+    public Usuarios(String id, String tienda, String producto, String inventario) {
         this.id = id;
-        this.nombre = nombre;
-        this.correo = correo;
-        this.direccion = direccion;
+        this.tienda = tienda;
+        this.producto = producto;
+        this.inventario = inventario;
     }
 
     public String getId() {
@@ -22,27 +22,27 @@ public class Usuarios {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String gettienda() {
+        return tienda;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void settienda(String tienda) {
+        this.tienda = tienda;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getproducto() {
+        return producto;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setproducto(String producto) {
+        this.producto = producto;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public String getinventario() {
+        return inventario;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setinventario(String inventario) {
+        this.inventario = inventario;
     }
 }

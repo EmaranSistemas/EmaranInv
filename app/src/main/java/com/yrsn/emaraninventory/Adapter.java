@@ -32,7 +32,7 @@ public class Adapter extends ArrayAdapter<Usuarios> {
         TextView tvName = view.findViewById(R.id.txt_name);
 
         tvID.setText(arrayUsuarios.get(position).getId());
-        tvName.setText(arrayUsuarios.get(position).getNombre());
+        tvName.setText(arrayUsuarios.get(position).gettienda());
 
         return view;
     }

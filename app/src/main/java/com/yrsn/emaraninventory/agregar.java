@@ -1,5 +1,4 @@
 package com.yrsn.emaraninventory;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -276,12 +275,12 @@ public class agregar extends AppCompatActivity {
 
     //********************************************************************
 
-    EditText txtNombre, txtCorreo, txtDireccion;
+    EditText txtTienda, txtProducto, txtInventario,txtPedido;
     Button btn_insert;
 
     /*
     TextView tienda = findViewById(R.id.nombre);
-    TextView producto = findViewById(R.id.correo);
+    TextView producto = findViewById(R.id.producto);
     */
     String p_product=" ";
 
@@ -308,8 +307,8 @@ public class agregar extends AppCompatActivity {
                 //accion que se debe mandar al los campos editables
                 String item = parent.getItemAtPosition(position).toString();
 
-                txtNombre = findViewById(R.id.nombre);
-                txtNombre.setText(item);
+                txtTienda = findViewById(R.id.tienda);
+                txtTienda.setText(item);
 
                 Toast.makeText(getApplicationContext(),"Item: "+item,Toast.LENGTH_SHORT).show();
 
@@ -327,8 +326,8 @@ public class agregar extends AppCompatActivity {
                 //accion que se debe mandar al los campos editables
                 String item = parent.getItemAtPosition(position).toString();
 
-                txtCorreo = findViewById(R.id.correo);
-                txtCorreo.setText(item);
+                txtProducto = findViewById(R.id.producto);
+                txtProducto.setText(item);
 
 
                 Toast.makeText(getApplicationContext(),"Item: "+item,Toast.LENGTH_SHORT).show();
@@ -345,14 +344,15 @@ public class agregar extends AppCompatActivity {
 
 
 /*
-        txtNombre = findViewById(R.id.nombre);
+        txtTienda = findViewById(R.id.nombre);
         String valor = p_product;
-        txtNombre.setText(valor);
+        txtTienda.setText(valor);
 
         */
 
-        //txtCorreo = findViewById(R.id.correo);
-        txtDireccion = findViewById(R.id.direccion);
+        //txtProducto = findViewById(R.id.producto);
+        txtInventario = findViewById(R.id.inventario);
+        txtPedido = findViewById(R.id.pedido);
 
         btn_insert = findViewById(R.id.btnInsert);
 
@@ -367,23 +367,28 @@ public class agregar extends AppCompatActivity {
 
     private void insertData() {
 
-        final String nombre = txtNombre.getText().toString().trim();
-        final String correo = txtCorreo.getText().toString().trim();
-        final String direccion = txtDireccion.getText().toString().trim();
+        final String tienda = txtTienda.getText().toString().trim();
+        final String producto = txtProducto.getText().toString().trim();
+        final String inventario = txtInventario.getText().toString().trim();
+        final String pedido = txtPedido.getText().toString().trim();
 
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("cargando...");
 
-        if(nombre.isEmpty()){
-            Toast.makeText(this, "ingrese nombre", Toast.LENGTH_SHORT).show();
+        if(tienda.isEmpty()){
+            Toast.makeText(this, "Tienda", Toast.LENGTH_SHORT).show();
             return;
         }
-        else if(correo.isEmpty()){
-            Toast.makeText(this, "Ingrese correo", Toast.LENGTH_SHORT).show();
+        else if(producto.isEmpty()){
+            Toast.makeText(this, "Producto", Toast.LENGTH_SHORT).show();
             return;
         }
-        else if(direccion.isEmpty()){
-            Toast.makeText(this, "Ingrese direccion", Toast.LENGTH_SHORT).show();
+        else if(inventario.isEmpty()){
+            Toast.makeText(this, "Ingrese inventario", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else if(pedido.isEmpty()){
+            Toast.makeText(this, "Ingrese 0 si no hay pedido", Toast.LENGTH_SHORT).show();
             return;
         }
         else{
@@ -414,9 +419,16 @@ public class agregar extends AppCompatActivity {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String,String> params = new HashMap<String,String>();
+                    /*
                     params.put("nombre",nombre);
                     params.put("correo",correo);
                     params.put("direccion",direccion);
+                     */
+
+                    params.put("tienda",tienda);
+                    params.put("producto",producto);
+                    params.put("inventario",inventario);
+                    params.put("pedido",pedido);
                     return params;
                 }
             };

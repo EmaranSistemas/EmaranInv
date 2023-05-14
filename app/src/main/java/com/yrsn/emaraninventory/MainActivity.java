@@ -60,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
                 ProgressDialog progressDialog = new ProgressDialog(view.getContext());
 
                 CharSequence[] dialogItem = {"Ver datos","Editar Datos","Eliminar Datos"};
-                builder.setTitle(employeeArrayList.get(position).getNombre());
+                // los item para mostar van ahi
+                builder.setTitle(employeeArrayList.get(position).gettienda());
                 builder.setItems(dialogItem, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int i) {
@@ -132,10 +133,10 @@ public class MainActivity extends AppCompatActivity {
                                 for(int i=0;i<jsonArray.length();i++){
                                     JSONObject object = jsonArray.getJSONObject(i);
                                     String id = object.getString("id");
-                                    String nombre = object.getString("nombre");
-                                    String correo = object.getString("correo");
-                                    String direccion = object.getString("direccion");
-                                    usuarios = new Usuarios(id,nombre,correo,direccion);
+                                    String tienda = object.getString("tienda");
+                                    String producto = object.getString("producto");
+                                    String inventario = object.getString("inventario");
+                                    usuarios = new Usuarios(id,tienda,producto,inventario);
                                     employeeArrayList.add(usuarios);
                                     adapter.notifyDataSetChanged();
                                 }
