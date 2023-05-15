@@ -6,6 +6,8 @@ permite que la mercaderista mantenga un control efectivo sobre su inventario.
 ### Primera Versión
 | Característica | Completado |
 | -------------- | ---------- |
-| Coneción a la base datos | [x] |
-| Característica 2 | [ ] |
-| Característica 3 | [x] |
+| Conexión a la base datos | [x] |
+| Insertar datos | [x] |
+| Listar datos | [x] |
+| Actualizar datos | [x] |
+| Eliminar datos | [x] |
