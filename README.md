@@ -24,6 +24,8 @@ permite que la mercaderista mantenga un control efectivo sobre su inventario.
 | Notificación en caso falle el gps | [ ] |
 
 ### Tercera Versión
+| Característica | Completado |
+| -------------- | ---------- |
 | Integración son el bd SIGEN | [ ] |
 | Lista de precios | [ ] |
 | Integrarlo como orden de pedido para facturar| [ ] |
