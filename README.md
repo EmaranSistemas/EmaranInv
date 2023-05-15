@@ -33,4 +33,4 @@ permite que la mercaderista mantenga un control efectivo sobre su inventario.
 
 ### Consultas
 - Aproximado de cada cuanto se hacen los pedidos/antes o despues de hacer el inventario
-- consultar las unidades de pedido
+- consultar las unidades de pedido stock minimo / variación
