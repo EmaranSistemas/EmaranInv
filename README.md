@@ -20,3 +20,17 @@ permite que la mercaderista mantenga un control efectivo sobre su inventario.
 | Integración multimedia(img,video) | [ ] |
 | Historial / auditoria de datos(ub) | [ ] |
 | Sugerir posible pedido | [ ] |
+| Almacenamiento local en caso de internet | [ ] |
+| Notificación en caso falle el gps | [ ] |
+
+### Tercera Versión
+| Integración son el bd SIGEN | [ ] |
+| Lista de precios | [ ] |
+| Integrarlo como orden de pedido para facturar| [ ] |
+| Integración PDF | [ ] |
+
+### Consultas
+
+^^
+- Aproximado de cada cuanto se hacen los pedidos/antes o despues de hacer el inventario
+^^
