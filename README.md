@@ -32,7 +32,5 @@ permite que la mercaderista mantenga un control efectivo sobre su inventario.
 | Integración PDF | [ ] |
 
 ### Consultas
-
-^^
 - Aproximado de cada cuanto se hacen los pedidos/antes o despues de hacer el inventario
-^^
+- consultar las unidades de pedido
