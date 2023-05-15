@@ -11,3 +11,12 @@ permite que la mercaderista mantenga un control efectivo sobre su inventario.
 | Listar datos | [x] |
 | Actualizar datos | [x] |
 | Eliminar datos | [x] |
+
+### Segunda Versión
+| Característica | Completado |
+| -------------- | ---------- |
+| Mostrar productos por tienda (grid) | [ ] |
+| Integración GPS | [ ] |
+| Integración multimedia(img,video) | [ ] |
+| Historial / auditoria de datos(ub) | [ ] |
+| Sugerir posible pedido | [ ] |
