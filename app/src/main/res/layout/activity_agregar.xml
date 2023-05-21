@@ -16,7 +16,16 @@
         android:gravity="center"
         android:text="Ingrese inventario"
         android:textSize="28sp" />
-
+<!--
+    <Spinner
+        android:id="@+id/spinnertiendas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textSize="5sp"
+        android:entries="@array/tiendas_"
+        />
+-->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -106,4 +115,6 @@
         android:textSize="18sp"
         android:layout_marginTop="20dp"
         />
+
+
 </LinearLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tiendas_">
+
+        <item> S.FRANCO EMMEL</item>
+        <item> S.FRANCO LAMBRAMANI</item>
+        <item> S.FRANCO K.TRISTAN</item>
+        <item> S.FRANCO K.MAYORISTA</item>
+        <item> S.PERUANOS PLAZAVEA_EJERCITO</item>
+        <item> S.PERUANOS PLAZAVEA_LAMARINA</item>
+        <item> H.T TOTTUS_EJERCITO</item>
+        <item> H.T TOTTUS_PARRA</item>
+        <item> H.T TOTTUS_PORONGOCHE</item>
+        <item> C.RETAIL METRO_AVIACIÓN</item>
+        <item> C.RETAIL METRO_EJERCITO</item>
+        <item> C.RETAIL METRO_LAMBRAMANI</item>
+        <item> C.RETAIL METRO_HUNTER</item>
+        <item> R.INTERNACIONALES SUPER_PIEROLA</item>
+        <item> R.INTERNACIONALES SUPER_PORTAL</item>
+
+    </string-array>
+</resources>
+
