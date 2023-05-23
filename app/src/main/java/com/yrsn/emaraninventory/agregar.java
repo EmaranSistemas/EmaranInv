@@ -29,7 +29,7 @@ public class agregar extends AppCompatActivity {
 
     // ***********lista desplegable para la seleccino de item***********
     String[] items = {"1  S.FRANCO EMMEL","2  S.FRANCO LAMBRAMANI","3  S.FRANCO K.TRISTAN","4  S.FRANCO K.MAYORISTA",
-                      "5  S.PERUANOS PLAZAVEA_EJERCITO","6  S.PERUANOS PLAZAVEA_LAMARINA",
+            "5  S.PERUANOS PLAZAVEA_EJERCITO","6  S.PERUANOS PLAZAVEA_LAMARINA",
             "7  H.T TOTTUS_EJERCITO","8  H.T TOTTUS_PARRA","9  H.T TOTTUS_PORONGOCHE",
             "10 C.RETAIL METRO_AVIACIÓN","11 C.RETAIL METRO_EJERCITO","12 C.RETAIL METRO_LAMBRAMANI","13 C.RETAIL METRO_HUNTER",
             "14 R.INTERNACIONALES SUPER_PIEROLA","15 R.INTERNACIONALES SUPER_PORTAL"};
@@ -167,46 +167,46 @@ public class agregar extends AppCompatActivity {
     };
 
     String[] SF_K_MAYORISTA= {
-        "1  SAZ. COMPLETO  GIGANTE X 42 SBS",
-                "2  PALILLO MOLIDO  GIGANTE X 42 SBS",
-                "3  COMINO MOLIDO GIGANTE X 42 SBS",
-                "4  PIMIENTA NEGRA MOLIDA GIGANTE X 42 SBS ",
-                "5  TUCO SAZON SALSA GIGANTE X 42 SBS ",
-                "6  AJO MOLIDO GIGANTE X 42 SBS ",
-                "7  CANELA MOLIDA GIGANTE X 42 SBS",
-                "8  EL VERDE GIGANTE X 42 SBS",
-                "9  KION MOLIDO GIGANTE X 42 SBS ",
-                "10 OREGANO SELECTO X 42 SBS",
-                "11 SAZONADOR COMPL. GIGANTE X 2 SBS                 ",
-                "12 COMINO BATAN GIGANTE X 2 SBS",
-                "13 PIMIENTA BATAN GIGANTE X 2 SBS",
-                "14 PALILLO MOLIDO BATAN GIG. X 2 SBS                        ",
-                "15 TUCO SAZON SALSA GIGANTE X 2 SBS",
-                "16 AJO MOLIDO BATAN GIGANTE X 2 SBS",
-                "17 CANELA MOLIDA BATAN X 2 SBS",
-                "18 EL VERDE BATAN GIGANTE X 2",
-                "19 OREGANO MOLIDO X 2 SBS",
-                "20 KION MOLIDO X 2 SBS",
-                "21 AJI PANCA FRESCO BATAN  X 3 SBS",
-                "22 AJI AMARILLO FRESCO BATAN  X 3 SBS",
-                "23 AJO FRESCO BATAN  X 3 SBS",
-                "24 CULANTRO FRESCO BATAN  X 3 SBS",
-                "25 SAZONADOR COMPLETO SIN PICANTE X 250 GR           ",
-                "26 COMINO MOLIDO X 250 GRS                           ",
-                "27 PIMIENTA MOLIDA  X 250 GR                         ",
-                "28 PALILLO MOLIDO X 250 GR                           ",
-                "29 AJO MOLIDO X 250 GR                               ",
-                "30 OREGANO MOLIDO X 250 GR                           ",
-                "31 SAZONADOR COMPLETO  X 500 GR                      ",
-                "32 COMINO MOLIDO X 500 GR                            ",
-                "33 PIMIENTA MOLIDA X 500 GR                          ",
-                "34 PALILLO MOLIDO X 500 GR                           ",
-                "35 AJO MOLIDO X 500 GR                               ",
-                "36 OREGANO MOLIDO X 500 GR                           ",
-                "37 SAL PARRILLERA BATAN PARA RES FRASCO X 225 GR.",
-                "38 SAL PARRILLERA BATAN PARA POLLO FRASCO X 215 GR.",
-                "39 SAL PARRILLERA BATAN PARA CERDO FRASCO X 220 GR.",
-                "40  "
+            "1  SAZ. COMPLETO  GIGANTE X 42 SBS",
+            "2  PALILLO MOLIDO  GIGANTE X 42 SBS",
+            "3  COMINO MOLIDO GIGANTE X 42 SBS",
+            "4  PIMIENTA NEGRA MOLIDA GIGANTE X 42 SBS ",
+            "5  TUCO SAZON SALSA GIGANTE X 42 SBS ",
+            "6  AJO MOLIDO GIGANTE X 42 SBS ",
+            "7  CANELA MOLIDA GIGANTE X 42 SBS",
+            "8  EL VERDE GIGANTE X 42 SBS",
+            "9  KION MOLIDO GIGANTE X 42 SBS ",
+            "10 OREGANO SELECTO X 42 SBS",
+            "11 SAZONADOR COMPL. GIGANTE X 2 SBS                 ",
+            "12 COMINO BATAN GIGANTE X 2 SBS",
+            "13 PIMIENTA BATAN GIGANTE X 2 SBS",
+            "14 PALILLO MOLIDO BATAN GIG. X 2 SBS                        ",
+            "15 TUCO SAZON SALSA GIGANTE X 2 SBS",
+            "16 AJO MOLIDO BATAN GIGANTE X 2 SBS",
+            "17 CANELA MOLIDA BATAN X 2 SBS",
+            "18 EL VERDE BATAN GIGANTE X 2",
+            "19 OREGANO MOLIDO X 2 SBS",
+            "20 KION MOLIDO X 2 SBS",
+            "21 AJI PANCA FRESCO BATAN  X 3 SBS",
+            "22 AJI AMARILLO FRESCO BATAN  X 3 SBS",
+            "23 AJO FRESCO BATAN  X 3 SBS",
+            "24 CULANTRO FRESCO BATAN  X 3 SBS",
+            "25 SAZONADOR COMPLETO SIN PICANTE X 250 GR           ",
+            "26 COMINO MOLIDO X 250 GRS                           ",
+            "27 PIMIENTA MOLIDA  X 250 GR                         ",
+            "28 PALILLO MOLIDO X 250 GR                           ",
+            "29 AJO MOLIDO X 250 GR                               ",
+            "30 OREGANO MOLIDO X 250 GR                           ",
+            "31 SAZONADOR COMPLETO  X 500 GR                      ",
+            "32 COMINO MOLIDO X 500 GR                            ",
+            "33 PIMIENTA MOLIDA X 500 GR                          ",
+            "34 PALILLO MOLIDO X 500 GR                           ",
+            "35 AJO MOLIDO X 500 GR                               ",
+            "36 OREGANO MOLIDO X 500 GR                           ",
+            "37 SAL PARRILLERA BATAN PARA RES FRASCO X 225 GR.",
+            "38 SAL PARRILLERA BATAN PARA POLLO FRASCO X 215 GR.",
+            "39 SAL PARRILLERA BATAN PARA CERDO FRASCO X 220 GR.",
+            "40  "
     };
 
     String[] SP_PLAZAEA={
@@ -612,11 +612,11 @@ public class agregar extends AppCompatActivity {
             return;
         }
         else if(inventario.isEmpty()){
-            Toast.makeText(this, "Ingrese inventario", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Ingrese un número en inventario", Toast.LENGTH_SHORT).show();
             return;
         }
         else if(pedido.isEmpty()){
-            Toast.makeText(this, "Ingrese 0 si no hay pedido", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Ingrese 0 si no hay Pedido", Toast.LENGTH_SHORT).show();
             return;
         }
         else{
