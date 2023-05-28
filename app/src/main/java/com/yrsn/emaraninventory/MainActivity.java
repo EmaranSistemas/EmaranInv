@@ -31,10 +31,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
-
-
-
-
     ListView listView;
     Adapter adapter;
     public static ArrayList<Usuarios> employeeArrayList = new ArrayList<>();
