@@ -51,7 +51,7 @@
             android:textColor="@color/lavender"
             android:text="Menú Principal"
             android:textSize="20sp"
-            android:drawableLeft="@drawable/baseline_home_24"
+            android:drawableLeft="@drawable/baseline_home"
             android:drawablePadding="8dp"/>
     </LinearLayout>
 

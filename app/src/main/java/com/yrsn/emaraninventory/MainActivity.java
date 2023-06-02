@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.yrsn.emaraninventory.mercapp.MyAdapter;
 import com.yrsn.emaraninventory.mercapp.smercados.s_metro;
 import com.yrsn.emaraninventory.mercapp.smercados.s_super;
@@ -98,7 +99,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
+        bottomNavigationView.setSelectedItemId(R.id.bottom_home);
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.bottom_home:
+                    return true;
+                case R.id.bottom_search:
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_settings:
+                    startActivity(new Intent(getApplicationContext(), Second_activity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_profile:
+                    startActivity(new Intent(getApplicationContext(), MercappActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+            }
+            return false;
+        });
+
+
+
+
     }
+
+
 
     public static void openDrawer(DrawerLayout drawerLayout)
     {
@@ -124,7 +155,10 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         closeDrawer(drawerLayout);
     }
+
+
 }
+
 
 /*
 
