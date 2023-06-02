@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -15,7 +15,45 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EmaranInventory"
         tools:targetApi="31">
-
+        <activity
+            android:name=".precio_super"
+            android:exported="false" />
+        <activity
+            android:name=".precio_tottus"
+            android:exported="false" />
+        <activity
+            android:name=".precio_plazavea"
+            android:exported="false" />
+        <activity
+            android:name=".precio_mayorista"
+            android:exported="false" />
+        <activity
+            android:name=".precio_tristan"
+            android:exported="false" />
+        <activity
+            android:name=".precio_lambramani"
+            android:exported="false" />
+        <activity
+            android:name=".precio_emmel"
+            android:exported="false" />
+        <activity
+            android:name=".s_super"
+            android:exported="false" />
+        <activity
+            android:name=".s_metro"
+            android:exported="false" />
+        <activity
+            android:name=".s_tottus"
+            android:exported="false" />
+        <activity
+            android:name=".sp_peruanos"
+            android:exported="false" />
+        <activity
+            android:name=".sc_franco"
+            android:exported="false" />
+        <activity
+            android:name=".Second_activity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -29,17 +67,16 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".editar"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".Second_activity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".detalles"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".Second_activity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -47,12 +84,11 @@
         <activity
             android:name=".agregar"
             android:label="Inentario"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".Second_activity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
     </application>
 
 </manifest>

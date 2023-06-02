@@ -3,6 +3,7 @@ package com.yrsn.emaraninventory;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,6 +12,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.ExpandableListAdapter;
+import android.widget.ExpandableListView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -26,20 +30,21 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.DatagramPacket;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
 
+    Button btn;
+    private ListView listView;
+    private List<String> names;
 
 
-    ListView listView;
-    Adapter adapter;
-    public static ArrayList<Usuarios> employeeArrayList = new ArrayList<>();
-    String url = "https://emaransac.com/android/mostrar.php";
-    Usuarios usuarios;
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,119 +52,74 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        listView = findViewById(R.id.myListView);
-        adapter = new Adapter(this,employeeArrayList);
-        listView.setAdapter(adapter);
+        listView = findViewById(R.id.listView);
+        names = new ArrayList<String>();
 
+        names.add("FRANCO SUPERMERCADOS");
+        names.add("SUPERMERCADOS PERUANOS");
+        names.add("HIPERMERCADOS TOTTUS");
+        names.add("CENCOSUD RETAIL");
+        names.add("REPRESENTACIONES INTERNACIONALES - EL SUPER");
+
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,names);
+        //listView.setAdapter(adapter);
+
+        MyAdapter myAdapter= new MyAdapter(this,R.layout.list_item,names);
+        listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-                ProgressDialog progressDialog = new ProgressDialog(view.getContext());
+                if(names.get(position).equals("FRANCO SUPERMERCADOS")){
+                    Intent intent = new Intent(MainActivity.this,sc_franco.class);
+                    intent.putExtra("FRANCO",names.get(position));
+                    startActivity(intent);
+                }
+                else if (names.get(position).equals("SUPERMERCADOS PERUANOS")) {
+                    Intent intent = new Intent(MainActivity.this,sp_peruanos.class);
+                    intent.putExtra("SPERUANOS",names.get(position));
+                    startActivity(intent);
 
-                CharSequence[] dialogItem = {"Ver datos","Editar Datos","Eliminar Datos"};
-                // los item para mostar van ahi
-                builder.setTitle(employeeArrayList.get(position).gettienda());
-                builder.setItems(dialogItem, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int i) {
-                        switch (i){
-                            case 0:
-                                startActivity(new Intent(getApplicationContext(),detalles.class).putExtra("position",position));
-                                break;
-                            case 1:
-                                startActivity(new Intent(getApplicationContext(),editar.class).putExtra("position",position));
-                                break;
-                            case 2:
-                                deleteData(employeeArrayList.get(position).getId());
-                                break;
-                        }
-                    }
-                });
-                builder.create().show();
+                }
+                else if (names.get(position).equals("HIPERMERCADOS TOTTUS")) {
+                    Intent intent = new Intent(MainActivity.this,s_tottus.class);
+                    intent.putExtra("TOTTUS",names.get(position));
+                    startActivity(intent);
+
+                }
+                else if (names.get(position).equals("CENCOSUD RETAIL")) {
+                    Intent intent = new Intent(MainActivity.this,s_metro.class);
+                    intent.putExtra("METRO",names.get(position));
+                    startActivity(intent);
+
+                }
+                else if (names.get(position).equals("REPRESENTACIONES INTERNACIONALES - EL SUPER")) {
+                    Intent intent = new Intent(MainActivity.this,s_super.class);
+                    intent.putExtra("SUPER",names.get(position));
+                    startActivity(intent);
+
+                }else {
+                    Toast.makeText(MainActivity.this,"No existe el mercado",Toast.LENGTH_LONG).show();
+                }
+
+
             }
         });
-        retrieveData();
-    }
-
-    private void deleteData(final String id) {
-
-        StringRequest request = new StringRequest(Request.Method.POST, "https://emaransac.com/android/eliminar.php",
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-
-                        if(response.equalsIgnoreCase("datos eliminados")){
-                            Toast.makeText(MainActivity.this, "eliminado correctamente", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                        }
-                        else{
-                            Toast.makeText(MainActivity.this, "no se puedo eliminar", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(MainActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        }){
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> params = new HashMap<String,String>();
-                params.put("id", id);
-                return params;
-            }
-        };
-
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(request);
-    }
-
-    public void retrieveData(){
-
-        StringRequest request = new StringRequest(Request.Method.POST, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-
-                        employeeArrayList.clear();
-                        try{
-                            JSONObject jsonObject = new JSONObject(response);
-                            String exito = jsonObject.getString("exito");
-                            JSONArray jsonArray = jsonObject.getJSONArray("datos");
-                            if(exito.equals("1")){
-                                for(int i=0;i<jsonArray.length();i++){
-                                    JSONObject object = jsonArray.getJSONObject(i);
-                                    String id = object.getString("id");
-                                    String tienda = object.getString("tienda");
-                                    String producto = object.getString("producto");
-                                    String inventario = object.getString("inventario");
-                                    usuarios = new Usuarios(id,tienda,producto,inventario);
-                                    employeeArrayList.add(usuarios);
-                                    adapter.notifyDataSetChanged();
-                                }
-                            }
-                        }
-                        catch (JSONException e){
-                            e.printStackTrace();
-                        }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(MainActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(request);
-    }
 
 
-    public void agregar(View view) {
-        startActivity(new Intent(getApplicationContext(),agregar.class));
-        //Intent intent=new Intent(MainActivity.this,agregar.class);
-        //startActivity(intent);
+
     }
 }
+
+/*
+
+        btn= findViewById(R.id.buttonMain);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,Second_activity.class);
+                startActivity(intent);
+            }
+ */
