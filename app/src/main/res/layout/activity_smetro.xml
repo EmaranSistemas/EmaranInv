@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".s_metro">
+    tools:context=".mercapp.smercados.s_metro">
 
     <ListView
         android:id="@+id/listView_s_metro"

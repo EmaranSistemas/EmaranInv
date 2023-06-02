@@ -1,4 +1,4 @@
-package com.yrsn.emaraninventory;
+package com.yrsn.emaraninventory.mercapp.smercados;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.yrsn.emaraninventory.mercapp.MyAdapter;
+import com.yrsn.emaraninventory.R;
+import com.yrsn.emaraninventory.mercapp.precios.precio_lambramani;
+import com.yrsn.emaraninventory.mercapp.precios.precio_mayorista;
+import com.yrsn.emaraninventory.mercapp.precios.precio_super;
+import com.yrsn.emaraninventory.mercapp.precios.precio_tristan;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +60,7 @@ public class s_metro extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else if (names.get(position).equals("METRO EJERCITO")) {
-                    Intent intent = new Intent(s_metro.this,precio_lambramani.class);
+                    Intent intent = new Intent(s_metro.this, precio_lambramani.class);
                     intent.putExtra("PRECIOLAMBRAMANI",names.get(position));
                     startActivity(intent);
 
@@ -65,7 +72,7 @@ public class s_metro extends AppCompatActivity {
 
                 }
                 else if (names.get(position).equals("METRO HUNTER")) {
-                    Intent intent = new Intent(s_metro.this,precio_mayorista.class);
+                    Intent intent = new Intent(s_metro.this, precio_mayorista.class);
                     intent.putExtra("PRECIOMAYORISTA",names.get(position));
                     startActivity(intent);
 

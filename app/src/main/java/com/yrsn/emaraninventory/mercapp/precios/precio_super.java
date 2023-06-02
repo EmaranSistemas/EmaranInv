@@ -1,41 +1,42 @@
-package com.yrsn.emaraninventory;
+package com.yrsn.emaraninventory.mercapp.precios;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.yrsn.emaraninventory.mercapp.MyAdapter;
+import com.yrsn.emaraninventory.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class sp_peruanos extends AppCompatActivity {
-
+public class precio_super extends AppCompatActivity {
     private ListView listView;
     private List<String> names;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sp_peruanos);
+        setContentView(R.layout.activity_precio_super);
 
-
-        listView = findViewById(R.id.listView_s_peruanos);
+        listView = findViewById(R.id.precio_super);
         names = new ArrayList<String>();
 
-        names.add("PLAZA VEA EJERCITO");
-        names.add("PLAZA VEA MARINA ");
+        names.add("TOTTUS EJERCITO");
+        names.add("TOTTUS PORONGOCHE");
+        names.add("TOTTUS PARRA");
+
+
 
         Bundle bundle = getIntent().getExtras();
         if(bundle !=null){
-            String hello = bundle.getString("SPERUANOS");
-            Toast.makeText(sp_peruanos.this,hello,Toast.LENGTH_LONG).show();
+            String hello = bundle.getString("TOTTUS");
+            Toast.makeText(precio_super.this,hello,Toast.LENGTH_LONG).show();
         }else{
-            Toast.makeText(sp_peruanos.this,"It is empty",Toast.LENGTH_LONG).show();
+            Toast.makeText(precio_super.this,"It is empty",Toast.LENGTH_LONG).show();
         }
 
 
@@ -47,10 +48,7 @@ public class sp_peruanos extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Intent intent = new Intent(sp_peruanos.this, precio_plazavea.class);
-                intent.putExtra("PRECIOPLAZA",names.get(position));
-                startActivity(intent);
-                Toast.makeText(sp_peruanos.this,names.get(position),Toast.LENGTH_SHORT).show();
+                Toast.makeText(precio_super.this,names.get(position),Toast.LENGTH_SHORT).show();
 
             }
         });

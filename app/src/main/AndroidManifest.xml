@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -14,49 +14,61 @@
         android:roundIcon="@mipmap/ic_merapp_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EmaranInventory"
-        tools:targetApi="31">
+        tools:targetApi="31" >
         <activity
-            android:name=".precio_super"
+            android:name=".MercappActivity"
             android:exported="false" />
         <activity
-            android:name=".precio_tottus"
+            android:name=".AboutActivity"
             android:exported="false" />
         <activity
-            android:name=".precio_plazavea"
+            android:name=".ShareActivity"
             android:exported="false" />
         <activity
-            android:name=".precio_mayorista"
+            android:name=".settingsActivity"
             android:exported="false" />
         <activity
-            android:name=".precio_tristan"
+            android:name=".mercapp.precios.precio_super"
             android:exported="false" />
         <activity
-            android:name=".precio_lambramani"
+            android:name=".mercapp.precios.precio_tottus"
             android:exported="false" />
         <activity
-            android:name=".precio_emmel"
+            android:name=".mercapp.precios.precio_plazavea"
             android:exported="false" />
         <activity
-            android:name=".s_super"
+            android:name=".mercapp.precios.precio_mayorista"
             android:exported="false" />
         <activity
-            android:name=".s_metro"
+            android:name=".mercapp.precios.precio_tristan"
             android:exported="false" />
         <activity
-            android:name=".s_tottus"
+            android:name=".mercapp.precios.precio_lambramani"
             android:exported="false" />
         <activity
-            android:name=".sp_peruanos"
+            android:name=".mercapp.precios.precio_emmel"
             android:exported="false" />
         <activity
-            android:name=".sc_franco"
+            android:name=".mercapp.smercados.s_super"
+            android:exported="false" />
+        <activity
+            android:name=".mercapp.smercados.s_metro"
+            android:exported="false" />
+        <activity
+            android:name=".mercapp.smercados.s_tottus"
+            android:exported="false" />
+        <activity
+            android:name=".mercapp.smercados.sp_peruanos"
+            android:exported="false" />
+        <activity
+            android:name=".mercapp.smercados.sc_franco"
             android:exported="false" />
         <activity
             android:name=".Second_activity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -68,23 +80,23 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".editar"
-            android:parentActivityName=".Second_activity">
+            android:name=".mercapp.editar"
+            android:parentActivityName=".Second_activity" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".detalles"
-            android:parentActivityName=".Second_activity">
+            android:name=".mercapp.detalles"
+            android:parentActivityName=".Second_activity" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".agregar"
+            android:name=".mercapp.agregar"
             android:label="Inentario"
-            android:parentActivityName=".Second_activity">
+            android:parentActivityName=".Second_activity" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

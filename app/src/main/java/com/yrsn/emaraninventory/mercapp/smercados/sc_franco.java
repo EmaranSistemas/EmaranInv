@@ -1,4 +1,4 @@
-package com.yrsn.emaraninventory;
+package com.yrsn.emaraninventory.mercapp.smercados;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.yrsn.emaraninventory.mercapp.MyAdapter;
+import com.yrsn.emaraninventory.R;
+import com.yrsn.emaraninventory.mercapp.precios.precio_emmel;
+import com.yrsn.emaraninventory.mercapp.precios.precio_lambramani;
+import com.yrsn.emaraninventory.mercapp.precios.precio_mayorista;
+import com.yrsn.emaraninventory.mercapp.precios.precio_tristan;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,12 +56,12 @@ public class sc_franco extends AppCompatActivity {
            @Override
            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                if(names.get(position).equals("EMMEL")){
-                   Intent intent = new Intent(sc_franco.this,precio_emmel.class);
+                   Intent intent = new Intent(sc_franco.this, precio_emmel.class);
                    intent.putExtra("PRECIOEMMEL",names.get(position));
                    startActivity(intent);
                }
                else if (names.get(position).equals("LAMBRAMANI")) {
-                   Intent intent = new Intent(sc_franco.this,precio_lambramani.class);
+                   Intent intent = new Intent(sc_franco.this, precio_lambramani.class);
                    intent.putExtra("PRECIOLAMBRAMANI",names.get(position));
                    startActivity(intent);
 
@@ -66,7 +73,7 @@ public class sc_franco extends AppCompatActivity {
 
                }
                else if (names.get(position).equals("KOSTO MAYORISTA")) {
-                   Intent intent = new Intent(sc_franco.this,precio_mayorista.class);
+                   Intent intent = new Intent(sc_franco.this, precio_mayorista.class);
                    intent.putExtra("PRECIOMAYORISTA",names.get(position));
                    startActivity(intent);
 

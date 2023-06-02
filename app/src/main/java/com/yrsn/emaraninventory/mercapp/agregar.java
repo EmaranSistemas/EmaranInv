@@ -1,4 +1,4 @@
-package com.yrsn.emaraninventory;
+package com.yrsn.emaraninventory.mercapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,6 +20,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.yrsn.emaraninventory.MainActivity;
+import com.yrsn.emaraninventory.R;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -628,7 +630,7 @@ public class agregar extends AppCompatActivity {
                             if(response.equalsIgnoreCase("Se guardo correctamente.")){
                                 Toast.makeText(agregar.this, "Se guardo correctamente.", Toast.LENGTH_SHORT).show();
                                 progressDialog.dismiss();
-                                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                 finish();
                             }
                             else{

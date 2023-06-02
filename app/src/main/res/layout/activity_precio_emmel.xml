@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".precio_emmel">
+    tools:context=".mercapp.precios.precio_emmel">
 
     <ListView
         android:id="@+id/precio_emmel"

@@ -19,6 +19,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.yrsn.emaraninventory.mercapp.Adapter;
+import com.yrsn.emaraninventory.mercapp.Usuarios;
+import com.yrsn.emaraninventory.mercapp.agregar;
+import com.yrsn.emaraninventory.mercapp.detalles;
+import com.yrsn.emaraninventory.mercapp.editar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -62,10 +67,10 @@ public class Second_activity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int i) {
                         switch (i){
                             case 0:
-                                startActivity(new Intent(getApplicationContext(),detalles.class).putExtra("position",position));
+                                startActivity(new Intent(getApplicationContext(), detalles.class).putExtra("position",position));
                                 break;
                             case 1:
-                                startActivity(new Intent(getApplicationContext(),editar.class).putExtra("position",position));
+                                startActivity(new Intent(getApplicationContext(), editar.class).putExtra("position",position));
                                 break;
                             case 2:
                                 deleteData(employeeArrayList.get(position).getId());
@@ -153,7 +158,7 @@ public class Second_activity extends AppCompatActivity {
 
 
     public void agregar(View view) {
-        startActivity(new Intent(getApplicationContext(),agregar.class));
+        startActivity(new Intent(getApplicationContext(), agregar.class));
         //Intent intent=new Intent(Second_activity.this,agregar.class);
         //startActivity(intent);
     }

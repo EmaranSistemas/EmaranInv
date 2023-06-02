@@ -1,4 +1,4 @@
-package com.yrsn.emaraninventory;
+package com.yrsn.emaraninventory.mercapp.precios;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,22 +8,24 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.yrsn.emaraninventory.mercapp.MyAdapter;
+import com.yrsn.emaraninventory.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class precio_emmel extends AppCompatActivity {
+public class precio_lambramani extends AppCompatActivity {
+
     private ListView listView;
     private List<String> names;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_precio_emmel);
+        setContentView(R.layout.activity_precio_lambramani);
 
-
-        listView = findViewById(R.id.precio_emmel);
+        listView = findViewById(R.id.precio_lambramani);
         names = new ArrayList<String>();
-
 
         names.add("CANELA MOLIDA FRASCO X 50 GRS");
         names.add("COMINO MOLIDO FRASCO X 50 GRS");
@@ -62,16 +64,17 @@ public class precio_emmel extends AppCompatActivity {
         names.add("SAL PARRILLERA RES FRASCO X 225 GRS");
         names.add("SAL PARRILLERA POLLO  FRASCO X 215 GRS");
         names.add("SAL PARRILLERA CERDO FRASCO X 220 GRS");
-        names.add("AJI AMARILLO FRASCO X 70 GRS");
+        names.add("AJO MOLIDO BATAN GIGANTE X 8 SBS");
+        names.add("CANELA MOLIDA BATAN X 8 SBS");
 
 
 
         Bundle bundle = getIntent().getExtras();
         if(bundle !=null){
-            String hello = bundle.getString("PRECIOEMMEL");
-            Toast.makeText(precio_emmel.this,hello,Toast.LENGTH_LONG).show();
+            String hello = bundle.getString("PRECIOLAMBRAMANI");
+            Toast.makeText(precio_lambramani.this,hello,Toast.LENGTH_LONG).show();
         }else{
-            Toast.makeText(precio_emmel.this,"It is empty",Toast.LENGTH_LONG).show();
+            Toast.makeText(precio_lambramani.this,"It is empty",Toast.LENGTH_LONG).show();
         }
 
 
@@ -83,9 +86,11 @@ public class precio_emmel extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Toast.makeText(precio_emmel.this,names.get(position),Toast.LENGTH_SHORT).show();
+                Toast.makeText(precio_lambramani.this,names.get(position),Toast.LENGTH_SHORT).show();
 
             }
         });
+
+
     }
 }
