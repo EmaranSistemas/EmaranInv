@@ -26,10 +26,10 @@ public class detalles extends AppCompatActivity {
         Intent intent = getIntent();
         position = intent.getExtras().getInt("position");
 
-        tvid.setText("ID: " + MainActivity.employeeArrayList.get(position).getId());
-        tvname.setText("tienda: " + MainActivity.employeeArrayList.get(position).gettienda());
-        tvemail.setText("producto: " + MainActivity.employeeArrayList.get(position).getproducto());
-        tvcontact.setText("inventario: " + MainActivity.employeeArrayList.get(position).getinventario());
+        tvid.setText("ID: " + MercappActivity.employeeArrayList.get(position).getId());
+        tvname.setText("tienda: " + MercappActivity.employeeArrayList.get(position).gettienda());
+        tvemail.setText("producto: " + MercappActivity.employeeArrayList.get(position).getproducto());
+        tvcontact.setText("inventario: " + MercappActivity.employeeArrayList.get(position).getinventario());
 
     }
 }

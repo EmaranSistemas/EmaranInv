@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -15,7 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EmaranInventory"
         tools:targetApi="31">
-
+        <activity
+            android:name=".TiendasActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -29,17 +31,20 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
+        <activity
+            android:name=".MercappActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".editar"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MercappActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".detalles"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MercappActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -47,12 +52,11 @@
         <activity
             android:name=".agregar"
             android:label="Inentario"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MercappActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
     </application>
 
 </manifest>

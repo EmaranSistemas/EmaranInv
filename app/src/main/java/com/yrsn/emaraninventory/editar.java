@@ -38,10 +38,10 @@ public class editar extends AppCompatActivity {
         Intent intent = getIntent();
         position = intent.getExtras().getInt("position");
 
-        edId.setText(MainActivity.employeeArrayList.get(position).getId());
-        edtienda.setText(MainActivity.employeeArrayList.get(position).gettienda());
-        edproducto.setText(MainActivity.employeeArrayList.get(position).getproducto());
-        edinventario.setText(MainActivity.employeeArrayList.get(position).getinventario());
+        edId.setText(MercappActivity.employeeArrayList.get(position).getId());
+        edtienda.setText(MercappActivity.employeeArrayList.get(position).gettienda());
+        edproducto.setText(MercappActivity.employeeArrayList.get(position).getproducto());
+        edinventario.setText(MercappActivity.employeeArrayList.get(position).getinventario());
 
     }
 
@@ -61,7 +61,7 @@ public class editar extends AppCompatActivity {
                     public void onResponse(String response) {
 
                         Toast.makeText(editar.this, response, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(),MercappActivity.class));
                         finish();
                         progressDialog.dismiss();
                     }
