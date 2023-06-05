@@ -1,4 +1,4 @@
-package com.yrsn.emaraninventory;
+package com.yrsn.emaraninventory.mercapp;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +17,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.yrsn.emaraninventory.MainActivity;
+import com.yrsn.emaraninventory.R;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,11 +40,12 @@ public class editar extends AppCompatActivity {
         Intent intent = getIntent();
         position = intent.getExtras().getInt("position");
 
-        edId.setText(MercappActivity.employeeArrayList.get(position).getId());
-        edtienda.setText(MercappActivity.employeeArrayList.get(position).gettienda());
-        edproducto.setText(MercappActivity.employeeArrayList.get(position).getproducto());
-        edinventario.setText(MercappActivity.employeeArrayList.get(position).getinventario());
-
+        /*
+        edId.setText(MainActivity.employeeArrayList.get(position).getId());
+        edtienda.setText(MainActivity.employeeArrayList.get(position).gettienda());
+        edproducto.setText(MainActivity.employeeArrayList.get(position).getproducto());
+        edinventario.setText(MainActivity.employeeArrayList.get(position).getinventario());
+*/
     }
 
     public void actualizar(View view) {
@@ -61,7 +64,7 @@ public class editar extends AppCompatActivity {
                     public void onResponse(String response) {
 
                         Toast.makeText(editar.this, response, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(),MercappActivity.class));
+                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         finish();
                         progressDialog.dismiss();
                     }

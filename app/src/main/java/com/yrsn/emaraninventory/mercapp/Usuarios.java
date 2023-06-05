@@ -1,4 +1,4 @@
-package com.yrsn.emaraninventory;
+package com.yrsn.emaraninventory.mercapp;
 
 
 public class Usuarios {

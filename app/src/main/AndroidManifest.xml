@@ -16,9 +16,6 @@
         android:theme="@style/Theme.EmaranInventory"
         tools:targetApi="31">
         <activity
-            android:name=".TiendasActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -32,25 +29,21 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MercappActivity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".editar"
+            android:name=".mercapp.editar"
             android:parentActivityName=".MercappActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".detalles"
+            android:name=".mercapp.detalles"
             android:parentActivityName=".MercappActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".agregar"
+            android:name=".mercapp.agregar"
             android:label="Inentario"
             android:parentActivityName=".MercappActivity">
             <meta-data

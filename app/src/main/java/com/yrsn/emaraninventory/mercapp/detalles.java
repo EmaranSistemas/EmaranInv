@@ -1,4 +1,4 @@
-package com.yrsn.emaraninventory;
+package com.yrsn.emaraninventory.mercapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,9 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.yrsn.emaraninventory.MainActivity;
+import com.yrsn.emaraninventory.R;
 
 public class detalles extends AppCompatActivity {
 
@@ -25,11 +28,11 @@ public class detalles extends AppCompatActivity {
 
         Intent intent = getIntent();
         position = intent.getExtras().getInt("position");
-
-        tvid.setText("ID: " + MercappActivity.employeeArrayList.get(position).getId());
-        tvname.setText("tienda: " + MercappActivity.employeeArrayList.get(position).gettienda());
-        tvemail.setText("producto: " + MercappActivity.employeeArrayList.get(position).getproducto());
-        tvcontact.setText("inventario: " + MercappActivity.employeeArrayList.get(position).getinventario());
-
+/*
+        tvid.setText("ID: " + MainActivity.employeeArrayList.get(position).getId());
+        tvname.setText("tienda: " + MainActivity.employeeArrayList.get(position).gettienda());
+        tvemail.setText("producto: " + MainActivity.employeeArrayList.get(position).getproducto());
+        tvcontact.setText("inventario: " + MainActivity.employeeArrayList.get(position).getinventario());
+*/
     }
 }

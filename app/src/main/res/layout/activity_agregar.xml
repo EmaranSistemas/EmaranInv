@@ -7,7 +7,7 @@
     android:padding="10dp"
     android:gravity="center"
     android:layout_height="match_parent"
-    tools:context=".agregar">
+    tools:context=".mercapp.agregar">
 
     <TextView
         android:layout_width="match_parent"

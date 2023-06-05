@@ -1,4 +1,4 @@
-package com.yrsn.emaraninventory;
+package com.yrsn.emaraninventory.mercapp;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,14 +10,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.yrsn.emaraninventory.R;
+
 import java.util.List;
 
-public class Adapter extends ArrayAdapter<Usuarios> {
+public class AdapterProd extends ArrayAdapter<productos> {
 
     Context context;
-    List<Usuarios> arrayUsuarios;
+    List<productos> arrayUsuarios;
 
-    public Adapter(@NonNull Context context, List<Usuarios> arrayUsuarios) {
+    public AdapterProd(@NonNull Context context, List<productos> arrayUsuarios) {
         super(context, R.layout.list_usuarios,arrayUsuarios);
         this.context =context;
         this.arrayUsuarios =arrayUsuarios;
@@ -32,7 +34,7 @@ public class Adapter extends ArrayAdapter<Usuarios> {
         TextView tvName = view.findViewById(R.id.txt_name);
 
         tvID.setText(arrayUsuarios.get(position).getId());
-        tvName.setText(arrayUsuarios.get(position).gettienda());
+        tvName.setText(arrayUsuarios.get(position).getnombre());
 
         return view;
     }
